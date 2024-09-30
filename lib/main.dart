@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'constant.dart';
 import 'features/splash/presentation/views/splash_view.dart';
@@ -19,8 +20,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           brightness: Brightness.dark
       ).copyWith(
-          scaffoldBackgroundColor:  KprimayColor
+          scaffoldBackgroundColor:  KprimayColor,
+        textTheme: GoogleFonts.montserratTextTheme(
+          ThemeData.dark().textTheme,
+        )
       ),
+
       home:const  SplashView(),
     );
   }
