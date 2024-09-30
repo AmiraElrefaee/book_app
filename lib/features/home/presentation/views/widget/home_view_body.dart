@@ -1,3 +1,4 @@
+import 'package:book_application/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'custom_appBar.dart';
@@ -9,14 +10,20 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children:const  [
-          CustomAppbar(),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:const  [
+            CustomAppbar(),
+          FeatureBooksListView(),
+          SizedBox(
+            height:60,
+          ),
+          Text('Best Seller',style: Styles.titleMeduim,),
 
-
-        FeatureBooksListView(),
-
-      ],
+        ],
+      ),
     );
   }
 }
