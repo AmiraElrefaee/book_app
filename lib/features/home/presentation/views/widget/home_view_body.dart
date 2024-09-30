@@ -1,6 +1,7 @@
 import 'package:book_application/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'best_seller_list_view_item.dart';
 import 'custom_appBar.dart';
 import 'feature_books_list_view.dart';
 import 'feature_list_view_item.dart';
@@ -21,6 +22,7 @@ class HomeViewBody extends StatelessWidget {
             height:60,
           ),
           Text('Best Seller',style: Styles.titleMeduim,),
+          BestSellerListViewItem(),
 
         ],
       ),
