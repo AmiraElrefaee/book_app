@@ -9,15 +9,15 @@ static const textStyle18=TextStyle(
 static const textStyle20=TextStyle(
   fontSize: 23,
   fontWeight: FontWeight.normal,
-  fontFamily: kGT,
+
 );
 static const textStyle30=TextStyle(
-  fontSize: 20,
+  fontSize: 30,
   fontWeight: FontWeight.normal,
   fontFamily: kGT,
 );
 static const textStyle14=TextStyle(
-  fontSize: 14,
+  fontSize: 17,
   fontWeight: FontWeight.normal,
 );
 static const textStyle16=TextStyle(
