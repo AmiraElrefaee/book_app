@@ -2,6 +2,8 @@ import 'package:book_application/core/utils/asset_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/styles.dart';
+
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
 
@@ -25,10 +27,17 @@ class BestSellerListViewItem extends StatelessWidget {
           ),
         ),
       ),
-          Column(
-            children: [
-
-            ],
+          SizedBox(width: 30,),
+          SizedBox(
+            width: MediaQuery.of(context).size.width*.5,
+            child: Column(
+              children:const  [
+                Text('hary potter and the  golbet of fire ',
+                  style: Styles.textStyle20,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,),
+              ],
+            ),
           ),
         ],
       ),
