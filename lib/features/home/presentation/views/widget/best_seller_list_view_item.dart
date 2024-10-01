@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
+import 'book_rating.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -30,28 +31,32 @@ class BestSellerListViewItem extends StatelessWidget {
           SizedBox(width: 30,),
           SizedBox(
             width: MediaQuery.of(context).size.width*.5,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-                Text('hary potter and the  golbet of fire ',
-                  style: Styles.textStyle20.copyWith(
-                    fontFamily: 'GT'
-                  ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,),
-                const SizedBox(height: 3,),
-              const  Text('J.K.Rowling',
-                style: Styles.textStyle14,),
-                const SizedBox(height: 3,),
-                Row(
-                  children: [
-                    Text('19.99 \$',
+            child: Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:  [
+                  Text('hary potter and the  golbet of fire ',
                     style: Styles.textStyle20.copyWith(
-                      fontWeight: FontWeight.bold
-                    ),),
-                  ],
-                ),
-              ],
+                      fontFamily: 'GT'
+                    ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,),
+                  const SizedBox(height: 3,),
+                const  Text('J.K.Rowling',
+                  style: Styles.textStyle14,),
+                  const SizedBox(height: 3,),
+                  Row(
+                    children: [
+                      Text('19.99 \$',
+                      style: Styles.textStyle20.copyWith(
+                        fontWeight: FontWeight.bold
+                      ),),
+                    const  Spacer(),
+                      const BookRating(),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

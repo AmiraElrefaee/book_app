@@ -21,7 +21,7 @@ static const textStyle14=TextStyle(
   fontWeight: FontWeight.normal,
 );
 static const textStyle16=TextStyle(
-  fontSize: 16,
+  fontSize: 22,
   fontWeight: FontWeight.w500,
 );
 }
