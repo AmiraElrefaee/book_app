@@ -1,6 +1,7 @@
 import 'package:book_application/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'best_seller_item.dart';
 import 'best_seller_list_view_item.dart';
 import 'custom_appBar.dart';
 import 'feature_books_list_view.dart';
@@ -11,22 +12,36 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children:const  [
-            CustomAppbar(),
-          FeatureBooksListView(),
-          SizedBox(
-            height:60,
-          ),
-          Text('Best Seller',style: Styles.textStyle18,),
-          SizedBox(height: 20,),
-          BestSellerListViewItem(),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(child:Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:const  [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30),
+              child: CustomAppbar(),
+            ),
+            FeatureBooksListView(),
+            SizedBox(
+              height:60,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30),
+              child: Text('Best Seller',style: Styles.textStyle18,),
+            ),
+            // SizedBox(height: 10,)
+          ],
+        ) ,),
 
-        ],
-      ),
+      
+           SliverFillRemaining(child: Padding(
+             padding: const EdgeInsets.symmetric(horizontal: 30),
+             child: BestSellerListViewItem(),
+           )),
+  
+  
+      ],
     );
+
   }
 }
