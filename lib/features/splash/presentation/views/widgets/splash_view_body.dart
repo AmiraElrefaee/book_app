@@ -1,7 +1,9 @@
+import 'package:book_application/core/utils/app_router.dart';
 import 'package:book_application/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/asset_data.dart';
 import '../../../../home/presentation/views/home_view.dart';
@@ -58,7 +60,8 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
   }
   void NavigateT0Home() {
     Future.delayed(const Duration(seconds: 2),(){
-      Get.to(()=> const HomeView(), transition: Transition.fade);
+      GoRouter.of(context).push(AppRouter.kHomeView);
+      // Get.to(()=> const HomeView(), transition: Transition.fade);
     });
   }
 }
