@@ -2,8 +2,8 @@ import 'package:book_application/core/utils/asset_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class FeatureListViewItem extends StatelessWidget {
-  const FeatureListViewItem({super.key});
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({super.key});
 
   @override
   Widget build(BuildContext context) {

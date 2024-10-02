@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'feature_list_view_item.dart';
+import 'custom_book_image.dart';
 
 class FeatureBooksListView extends StatelessWidget {
   const FeatureBooksListView({super.key});
@@ -15,7 +15,7 @@ class FeatureBooksListView extends StatelessWidget {
           itemBuilder: (context,index){
         return const Padding(
           padding:  EdgeInsets.symmetric(horizontal: 10),
-          child:   FeatureListViewItem(),
+          child:   CustomBookImage(),
         );
       }
       ),
