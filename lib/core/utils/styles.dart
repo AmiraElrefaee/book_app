@@ -17,7 +17,7 @@ static const textStyle30=TextStyle(
   fontFamily: kGT,
 );
 static const textStyle14=TextStyle(
-  fontSize: 17,
+  fontSize: 18,
   fontWeight: FontWeight.normal,
 );
 static const textStyle16=TextStyle(
