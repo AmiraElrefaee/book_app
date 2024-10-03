@@ -1,3 +1,4 @@
+import 'package:book_application/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,10 +16,23 @@ class BookDetailsViewBody extends StatelessWidget {
       child: Column(
         children: [
          const  CustomBookDetailsAppBar(),
+
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: widthh*.18),
+            padding: EdgeInsets.symmetric(horizontal: widthh*.2),
             child: CustomBookImage(),
           ),
+          const SizedBox(
+            height: 43,
+          ),
+          Text('The Jungle Book ',
+          style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w600),),
+          const SizedBox(height: 6),
+          Text('Rudyard Kipling ',
+            style: Styles.textStyle18.copyWith(
+              fontStyle: FontStyle.italic
+                  ,fontWeight: FontWeight.w600,
+              color: Colors.white.withOpacity(.7)
+            )),
         ],
       ),
     );

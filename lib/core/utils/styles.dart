@@ -12,7 +12,7 @@ static const textStyle20=TextStyle(
 
 );
 static const textStyle30=TextStyle(
-  fontSize: 30,
+  fontSize: 37,
   fontWeight: FontWeight.normal,
   fontFamily: kGT,
 );
