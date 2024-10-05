@@ -1,7 +1,7 @@
 import 'package:book_application/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'best_seller_item.dart';
+import 'books_view_item.dart';
 import 'best_seller_list_view_item.dart';
 import 'custom_appBar.dart';
 import 'feature_books_list_view.dart';

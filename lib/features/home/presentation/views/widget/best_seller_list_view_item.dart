@@ -1,4 +1,4 @@
-import 'package:book_application/features/home/presentation/views/widget/best_seller_item.dart';
+import 'package:book_application/features/home/presentation/views/widget/books_view_item.dart';
 import 'package:flutter/cupertino.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
@@ -13,7 +13,7 @@ class BestSellerListViewItem extends StatelessWidget {
         itemBuilder: (context,index){
       return const Padding(
         padding:  EdgeInsets.symmetric(vertical: 10),
-        child:  BestSellerItem(),
+        child:  BooksViewItem(),
       );
     });
   }
