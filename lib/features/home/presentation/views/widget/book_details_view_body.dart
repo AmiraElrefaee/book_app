@@ -1,4 +1,5 @@
 import 'package:book_application/core/utils/styles.dart';
+import 'package:book_application/features/home/presentation/views/widget/similar_books_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,21 @@ class BookDetailsViewBody extends StatelessWidget {
             height: 37,
           ),
        const BookAction(),
-          
+          const SizedBox(
+            height: 50,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text('You can also like ',
+            style: Styles.textStyle14.copyWith(
+              fontWeight: FontWeight.w600
+            ),),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          SimilarBooksListView(),
+          const SizedBox(height: 40,),
         ],
       ),
     );
