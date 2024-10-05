@@ -1,24 +1,39 @@
-import 'package:flutter/cupertino.dart';
+import 'package:book_application/features/home/presentation/views/widget/custom_book_image.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide CarouselController;
+import 'package:carousel_slider/carousel_slider.dart';
 
-import 'custom_book_image.dart';
-
-class FeatureBooksListView extends StatelessWidget {
+class FeatureBooksListView extends StatefulWidget {
   const FeatureBooksListView({super.key});
 
   @override
+  State<FeatureBooksListView> createState() => _FeatureBooksListViewState();
+}
+
+class _FeatureBooksListViewState extends State<FeatureBooksListView> {
+  @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height*.3,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-          itemCount: 3,
-          itemBuilder: (context,index){
-        return const Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 10),
-          child:   CustomBookImage(),
-        );
-      }
+    return CarouselSlider.builder(
+      options: CarouselOptions(
+        reverse: false,
+        initialPage: 0,
+          animateToClosest: true,
+          disableCenter: true,
+        height: MediaQuery.of(context).size.height * .3,
+        enlargeCenterPage: true, // Enable center item scaling
+        viewportFraction: 0.4
+        , // Adjust visible items
+          // Aspect ratio of items
       ),
+      itemCount: 3,
+      itemBuilder: (context, index, realIndex) {
+
+        return
+    // Apply the scale to the first item
+         CustomBookImage();
+
+      },
     );
   }
 }

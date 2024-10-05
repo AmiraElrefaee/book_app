@@ -17,6 +17,7 @@ class CustomBookImage extends StatelessWidget {
 
           image: const DecorationImage(image: AssetImage(AssetsData.tset),
 
+
           fit: BoxFit.fill),
         ),
       ),
