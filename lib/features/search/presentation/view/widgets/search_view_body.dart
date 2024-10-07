@@ -2,7 +2,6 @@ import 'package:book_application/features/search/presentation/view/widgets/searc
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 import '../../../../../core/utils/styles.dart';
 import 'customSearchTextField.dart';
 
@@ -20,7 +19,10 @@ class SearchViewBody extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-        Text('Search result',style: Styles.textStyle18,),
+          Text(
+            'Search result',
+            style: Styles.textStyle18,
+          ),
           const SizedBox(
             height: 20,
           ),
@@ -28,6 +30,5 @@ class SearchViewBody extends StatelessWidget {
         ],
       ),
     );
-
   }
 }

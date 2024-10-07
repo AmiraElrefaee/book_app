@@ -15,19 +15,16 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProviderStateMixin{
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<Offset> SlidingAnimation;
   @override
   void initState() {
-
     initSlidingAnimation();
     super.initState();
     NavigateT0Home();
   }
-
-
-
 
   @override
   void dispose() {
@@ -35,6 +32,7 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
     super.dispose();
     animationController.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,17 +47,19 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
       ],
     );
   }
+
   void initSlidingAnimation() {
-    animationController= AnimationController(
-        vsync: this ,
-        duration:const Duration(seconds: 1));
-    SlidingAnimation= Tween<Offset>
-      (begin: const Offset(0, 5) ,end:Offset.zero ).animate(animationController);
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    SlidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 5), end: Offset.zero)
+            .animate(animationController);
 
     animationController.forward();
   }
+
   void NavigateT0Home() {
-    Future.delayed(const Duration(seconds: 2),(){
+    Future.delayed(const Duration(seconds: 2), () {
       GoRouter.of(context).push(AppRouter.kHomeView);
       // Get.to(()=> const HomeView(), transition: Transition.fade);
     });

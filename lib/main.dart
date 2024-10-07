@@ -14,23 +14,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of your applicaDtion.
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerConfig:AppRouter.router ,
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          brightness: Brightness.dark
-      ).copyWith(
-          scaffoldBackgroundColor:  KprimayColor,
-        textTheme: GoogleFonts.montserratTextTheme(
-          ThemeData.dark().textTheme,
-        )
-      ),
-
-
+      theme: ThemeData(brightness: Brightness.dark).copyWith(
+          scaffoldBackgroundColor: KprimayColor,
+          textTheme: GoogleFonts.montserratTextTheme(
+            ThemeData.dark().textTheme,
+          )),
     );
   }
 }
-

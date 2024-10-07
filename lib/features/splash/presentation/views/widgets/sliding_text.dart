@@ -11,18 +11,16 @@ class SlidingText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-        animation:SlidingAnimation ,
-        builder: (context,_) {
+        animation: SlidingAnimation,
+        builder: (context, _) {
           return SlideTransition(
             position: SlidingAnimation,
-            child: const  Text('Read Free Books',
+            child: const Text(
+              'Read Free Books',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 80,
-                  fontFamily: 'libre'
-              ),),
+              style: TextStyle(fontSize: 80, fontFamily: 'libre'),
+            ),
           );
-        }
-    );
+        });
   }
 }

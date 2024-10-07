@@ -18,21 +18,18 @@ class _FeatureBooksListViewState extends State<FeatureBooksListView> {
       options: CarouselOptions(
         reverse: false,
         initialPage: 0,
-          animateToClosest: true,
-          disableCenter: true,
+        animateToClosest: true,
+        disableCenter: true,
         height: MediaQuery.of(context).size.height * .3,
         enlargeCenterPage: true, // Enable center item scaling
-        viewportFraction: 0.4
-        , // Adjust visible items
-          // Aspect ratio of items
+        viewportFraction: 0.4, // Adjust visible items
+        // Aspect ratio of items
       ),
       itemCount: 3,
       itemBuilder: (context, index, realIndex) {
-
         return
-    // Apply the scale to the first item
-         CustomBookImage();
-
+            // Apply the scale to the first item
+            CustomBookImage();
       },
     );
   }
