@@ -1,12 +1,11 @@
 import 'package:book_application/core/utils/app_router.dart';
 import 'package:book_application/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/asset_data.dart';
-import '../../../../home/presentation/views/home_view.dart';
+
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
