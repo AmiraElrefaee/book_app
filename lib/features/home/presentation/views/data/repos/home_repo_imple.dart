@@ -4,6 +4,7 @@ import 'package:book_application/core/utils/api_service.dart';
 import 'package:book_application/features/home/presentation/views/data/book_models/book_models.dart';
 
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'home_repo.dart';
@@ -23,8 +24,11 @@ try {
     books.add(BookModels.fromJson(item));
   }
   return right(books);
-} on Exception catch (e) {
- return left(ServerFailures());
+}  catch (e) {
+ if ( e is DioException){
+   return Left(ServerFailures.fromDioException(e));
+ }
+ return Left(ServerFailures('repo home imple ${e.toString()}'));
 }
 
 
