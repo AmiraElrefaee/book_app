@@ -35,9 +35,23 @@ try {
   }
 
   @override
-  Future<Either<Failures, List<BookModels>>> fetchFeatureBooks() {
-    // TODO: implement fetchFeatureBooks
-    throw UnimplementedError();
+  Future<Either<Failures, List<BookModels>>> fetchFeatureBooks()async {
+    try {
+      var data =
+          await apiService.get(
+          endPoint: 'volumes?q=subject:Programming&Filtering=free-ebooks');
+      List<BookModels> books=[];
+      for(var item in data['items']){
+        books.add(BookModels.fromJson(item));
+      }
+      return right(books);
+    }  catch (e) {
+      if ( e is DioException){
+        return Left(ServerFailures.fromDioException(e));
+      }
+      return Left(ServerFailures('repo home imple ${e.toString()}'));
+    }
+
   }
 
 }
