@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 
 import '../book_models/book_models.dart';
 
-abstract class homeRepo{
+abstract class HomeRepo{
  Future<Either<Failures,List<BookModels>>> fetchNewestBooks();
  Future<Either<Failures,List<BookModels>>> fetchFeatureBooks();
 }

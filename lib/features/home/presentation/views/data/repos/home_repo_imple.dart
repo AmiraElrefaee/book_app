@@ -9,7 +9,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'home_repo.dart';
 
-class HomeRepoImple implements homeRepo{
+class HomeRepoImple implements HomeRepo{
   final ApiService apiService;
   HomeRepoImple(this.apiService);
 
