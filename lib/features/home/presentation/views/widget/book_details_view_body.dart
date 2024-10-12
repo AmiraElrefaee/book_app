@@ -1,4 +1,5 @@
 
+import 'package:book_application/features/home/presentation/views/data/book_models/book_models.dart';
 import 'package:book_application/features/home/presentation/views/widget/similar_books_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,7 @@ import 'custom_book_details_app_bar.dart';
 
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key,});
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -25,7 +25,8 @@ class BookDetailsViewBody extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const CustomBookDetailsAppBar(),
-                  BookDetailsSection(),
+                  BookDetailsSection(
+                  ),
                   const SizedBox(
                     height: 37,
                   ),

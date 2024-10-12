@@ -1,15 +1,16 @@
+import 'package:book_application/features/home/presentation/views/data/book_models/book_models.dart';
 import 'package:book_application/features/home/presentation/views/widget/book_details_view_body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsView extends StatelessWidget {
-  const BookDetailsView({super.key});
-
+  const BookDetailsView({super.key, });
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: const Scaffold(
-        body: BookDetailsViewBody(),
+    return  SafeArea(
+      child:  Scaffold(
+        body: BookDetailsViewBody(
+        ),
       ),
     );
   }

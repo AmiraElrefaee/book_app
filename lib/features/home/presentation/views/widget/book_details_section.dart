@@ -1,3 +1,4 @@
+import 'package:book_application/features/home/presentation/views/data/book_models/book_models.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +7,7 @@ import 'book_rating.dart';
 import 'custom_book_image.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  const BookDetailsSection({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +36,10 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 18,
         ),
-        const BookRating(
+         BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
+          count:3 ,
+           rating: 4,
         ),
       ],
     );
