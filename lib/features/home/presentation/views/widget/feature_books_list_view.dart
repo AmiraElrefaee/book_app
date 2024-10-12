@@ -33,11 +33,14 @@ class _FeatureBooksListViewState extends State<FeatureBooksListView> {
           viewportFraction: 0.4, // Adjust visible items
           // Aspect ratio of items
         ),
-        itemCount: 3,
+        itemCount: state.books.length,
         itemBuilder: (context, index, realIndex) {
+
           return
               // Apply the scale to the first item
-              CustomBookImage();
+              CustomBookImage(
+                imgURL: state.books[index].volumeInfo.imageLinks.thumbnail,
+              );
         },
       );
     }
