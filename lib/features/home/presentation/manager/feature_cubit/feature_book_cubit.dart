@@ -10,7 +10,7 @@ part 'feature_book_state.dart';
 class FeatureBookCubit extends Cubit<FeatureBookState> {
   FeatureBookCubit(this.homeRepo) : super(FeatureBookInitial());
   final HomeRepo homeRepo;
-  Future<void> fetchFeatureBooks()async{
+  Future<void> FetchFeatureBooks()async{
 
     emit(FeatureBookLoading());
 var result =await homeRepo.fetchFeatureBooks();

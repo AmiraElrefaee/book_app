@@ -1,5 +1,4 @@
 import 'package:book_application/core/utils/asset_data.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookImage extends StatelessWidget {

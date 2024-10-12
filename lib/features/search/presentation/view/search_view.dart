@@ -1,5 +1,4 @@
 import 'package:book_application/features/search/presentation/view/widgets/search_view_body.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SearchView extends StatelessWidget {

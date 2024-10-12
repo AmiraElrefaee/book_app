@@ -8,7 +8,7 @@ class Customsearchtextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 20,
         ),
         maxLines: 1,
@@ -16,12 +16,12 @@ class Customsearchtextfield extends StatelessWidget {
           enabledBorder: buildOutlineInputBorder(),
           focusedBorder: buildOutlineInputBorder(),
           labelText: 'search',
-          labelStyle: TextStyle(fontSize: 20),
+          labelStyle: const TextStyle(fontSize: 20),
           suffixIcon: IconButton(
               onPressed: () {},
               icon: const Opacity(
                 opacity: .7,
-                child: const Icon(
+                child: Icon(
                   FontAwesomeIcons.magnifyingGlass,
                   size: 30,
                 ),
@@ -32,6 +32,6 @@ class Customsearchtextfield extends StatelessWidget {
   OutlineInputBorder buildOutlineInputBorder() {
     return OutlineInputBorder(
         borderRadius: BorderRadius.circular(15),
-        borderSide: BorderSide(width: 2, color: Colors.white24));
+        borderSide: const BorderSide(width: 2, color: Colors.white24));
   }
 }
