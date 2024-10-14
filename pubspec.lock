@@ -182,6 +182,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.4.1"
+  flutter_content_placeholder:
+    dependency: "direct main"
+    description:
+      name: flutter_content_placeholder
+      sha256: be0a7e8a2d0a220df3906c3dd28cddd86a3c9fde80d85a69b5b4334355650fcc
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -424,6 +432,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.28.0"
+  shimmer:
+    dependency: "direct main"
+    description:
+      name: shimmer
+      sha256: "5f88c883a22e9f9f299e5ba0e4f7e6054857224976a5d9f839d4ebdc94a14ac9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

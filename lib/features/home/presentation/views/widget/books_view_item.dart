@@ -11,7 +11,7 @@ import 'book_rating.dart';
 
 class BooksViewItem extends StatelessWidget {
   const BooksViewItem({super.key, required this.bookModels});
-final BookModels bookModels;
+  final BookModels bookModels;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -20,7 +20,8 @@ final BookModels bookModels;
         height: 175,
         child: Row(
           children: [
-            CustomBookImage(imgURL: bookModels.volumeInfo.imageLinks.thumbnail),
+            CustomBookImage(
+                imgURL: bookModels.volumeInfo.imageLinks?.thumbnail ??''),
             const SizedBox(
               width: 30,
             ),
@@ -39,7 +40,7 @@ final BookModels bookModels;
                     const SizedBox(
                       height: 3,
                     ),
-                     Text(
+                    Text(
                       bookModels.volumeInfo.authors![0],
                       style: Styles.textStyle14,
                     ),
@@ -54,9 +55,9 @@ final BookModels bookModels;
                               .copyWith(fontWeight: FontWeight.bold),
                         ),
                         const Spacer(),
-                         BookRating(
-                          rating:bookModels.volumeInfo.ratingsCount??0,
-                           count:  bookModels.volumeInfo.pageCount ??0,
+                        BookRating(
+                          rating: 1,
+                          count: bookModels.volumeInfo.pageCount ?? 0,
                         ),
                       ],
                     ),

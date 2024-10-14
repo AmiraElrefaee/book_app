@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' hide CarouselController;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_content_placeholder/flutter_content_placeholder.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../core/widgets/custom_loading_idicator.dart';
@@ -39,19 +41,67 @@ class _FeatureBooksListViewState extends State<FeatureBooksListView> {
           return
               // Apply the scale to the first item
               CustomBookImage(
-                imgURL: state.books[index].volumeInfo.imageLinks.thumbnail,
+                imgURL: state.books[index].volumeInfo.imageLinks?.thumbnail ??'',
               );
         },
       );
     }
     else  if (state is FeatureBookFailure ) {
       return CustomErrorWidget(errorMessage: state.errMess,) ;
+      // return SizedBox(
+      //   width: 200.0,
+      //   height: 100.0,
+      //   child: Shimmer.fromColors(
+      //     baseColor: Colors.red,
+      //     highlightColor: Colors.yellow,
+      //     child: Text(
+      //       'Shimmer',
+      //       textAlign: TextAlign.center,
+      //       style: TextStyle(
+      //         fontSize: 40.0,
+      //         fontWeight:
+      //         FontWeight.bold,
+      //       ),
+      //     ),
+      //   ),
+      // );
     }
     else {
       return const CustomLoadingIdicator();
+
+    //  return Shimmer.fromColors(
+    //      baseColor: Colors.deepOrange,
+    //      highlightColor: Colors.grey.shade100,
+    //      enabled: true,
+    //      child: const SingleChildScrollView(
+    //        physics: NeverScrollableScrollPhysics(),
+    //        child: Column(
+    //          crossAxisAlignment: CrossAxisAlignment.start,
+    //          mainAxisSize: MainAxisSize.max,
+    //          children: [
+    //
+    //
+    //            SizedBox(height: 16.0),
+    //            ContentPlaceholder(
+    //
+    //
+    //            ),
+    //            SizedBox(height: 16.0),
+    //            SizedBox(height: 16.0),
+    //            ContentPlaceholder(
+    //            ),
+    //            SizedBox(height: 16.0),
+    //            SizedBox(height: 16.0),
+    //            ContentPlaceholder(
+    //            ),
+    //          ],
+    //        ),
+    //      )
+    // );
+    }
     }
 
-  }
+
   ,
 );
   }

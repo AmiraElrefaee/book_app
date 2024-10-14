@@ -6,52 +6,50 @@ import 'package:book_application/features/home/presentation/views/data/book_mode
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-
 import 'home_repo.dart';
 
-class HomeRepoImple implements HomeRepo{
+class HomeRepoImple implements HomeRepo {
   final ApiService apiService;
   HomeRepoImple(this.apiService);
 
   @override
-  Future<Either<Failures, List<BookModels>>> fetchNewestBooks()async {
-try {
-  var data =
-  await apiService.get(
-      endPoint: 'volumes?q=subject:Programming&Filtering=free-ebooks&Sorting=newest');
-  List<BookModels> books=[];
-  for(var item in data['items']){
-    books.add(BookModels.fromJson(item));
-  }
-  return right(books);
-}  catch (e) {
- if ( e is DioException){
-   return Left(ServerFailures.fromDioException(e));
- }
- return Left(ServerFailures('repo home imple ${e.toString()}'));
-}
-
-
-  }
-
-  @override
-  Future<Either<Failures, List<BookModels>>> fetchFeatureBooks()async {
+  Future<Either<Failures, List<BookModels>>> fetchNewestBooks() async {
     try {
-      var data =
-          await apiService.get(
-          endPoint: 'volumes?q=subject:Programming&Filtering=free-ebooks');
-      List<BookModels> books=[];
-      for(var item in data['items']){
-        books.add(BookModels.fromJson(item));
+      var data = await apiService.get(
+          endPoint:
+              'volumes?q=computer science&Filtering=free-ebooks&Sorting=newest');
+      List<BookModels> books = [];
+      for (var item in data['items']) {
+        try {
+          books.add(BookModels.fromJson(item));
+        } catch (e) {
+          books.add(BookModels.fromJson(item));
+        }
       }
       return right(books);
-    }  catch (e) {
-      if ( e is DioException){
+    } catch (e) {
+      if (e is DioException) {
         return Left(ServerFailures.fromDioException(e));
       }
       return Left(ServerFailures('repo home imple ${e.toString()}'));
     }
-
   }
 
+  @override
+  Future<Either<Failures, List<BookModels>>> fetchFeatureBooks() async {
+    try {
+      var data = await apiService.get(
+          endPoint: 'volumes?q=subject:Programming&Filtering=free-ebooks');
+      List<BookModels> books = [];
+      for (var item in data['items']) {
+        books.add(BookModels.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailures.fromDioException(e));
+      }
+      return Left(ServerFailures('repo home imple ${e.toString()}'));
+    }
+  }
 }
