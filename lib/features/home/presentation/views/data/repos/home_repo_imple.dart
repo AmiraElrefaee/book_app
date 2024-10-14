@@ -57,7 +57,7 @@ class HomeRepoImple implements HomeRepo {
   Future<Either<Failures, List<BookModels>>> fetchsimilareBooks({required String category})async {
     try {
       var data = await apiService.get(
-          endPoint: 'volumes?q=subject:Programming&Sorting=relevance&Filtering=free-ebooks');
+          endPoint: 'volumes?q=computer science&Sorting=relevance&Filtering=free-ebooks');
       List<BookModels> books = [];
       for (var item in data['items']) {
         books.add(BookModels.fromJson(item));

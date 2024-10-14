@@ -15,7 +15,7 @@ class BooksViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetails),
+      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetails, extra: bookModels),
       child: SizedBox(
         height: 175,
         child: Row(
