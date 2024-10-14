@@ -55,7 +55,8 @@ final BookModels bookModels;
                         ),
                         const Spacer(),
                          BookRating(
-                          rating:3, count:  bookModels.volumeInfo.pageCount!,
+                          rating:bookModels.volumeInfo.ratingsCount??0,
+                           count:  bookModels.volumeInfo.pageCount ??0,
                         ),
                       ],
                     ),
