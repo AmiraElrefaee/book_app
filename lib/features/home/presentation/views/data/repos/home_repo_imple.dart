@@ -52,4 +52,22 @@ class HomeRepoImple implements HomeRepo {
       return Left(ServerFailures('repo home imple ${e.toString()}'));
     }
   }
+
+  @override
+  Future<Either<Failures, List<BookModels>>> fetchsimilareBooks({required String category})async {
+    try {
+      var data = await apiService.get(
+          endPoint: 'volumes?q=subject:Programming&Sorting=relevance&Filtering=free-ebooks');
+      List<BookModels> books = [];
+      for (var item in data['items']) {
+        books.add(BookModels.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailures.fromDioException(e));
+      }
+      return Left(ServerFailures('repo home imple ${e.toString()}'));
+    }
+  }
 }
