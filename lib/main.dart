@@ -1,6 +1,8 @@
 import 'package:book_application/core/utils/api_service.dart';
 import 'package:book_application/core/utils/service_locator.dart';
 import 'package:book_application/features/home/presentation/views/data/repos/home_repo_imple.dart';
+import 'package:book_application/features/search/presentation/manager/searches_cubit/searched_item_cubit.dart';
+import 'package:book_application/features/search/presentation/view/data/repos/home_repo.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +13,7 @@ import 'constant.dart';
 import 'core/utils/app_router.dart';
 import 'features/home/presentation/manager/feature_cubit/feature_book_cubit.dart';
 import 'features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
+import 'features/search/presentation/view/data/repos/repo_imple.dart';
 
 
 void main() {
@@ -32,6 +35,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               NewestBooksCubit(getIt.get<HomeRepoImple>(),)..FetchNewestBooks(),),
+    //     BlocProvider(
+    //       create: (context) =>
+    // SearchedItemCubit(getIt.get<HomeRepoImple>(),)..fetchNewestBooks())
+          // SearchedItemCubit(getIt.get<RepoImple>()),)
+
 
 
     ],

@@ -1,3 +1,4 @@
+import 'package:book_application/core/utils/app_router.dart';
 import 'package:book_application/features/home/presentation/views/widget/custom_book_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/material.dart' hide CarouselController;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_content_placeholder/flutter_content_placeholder.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../../../core/widgets/custom_error_widget.dart';
@@ -40,8 +42,13 @@ class _FeatureBooksListViewState extends State<FeatureBooksListView> {
 
           return
               // Apply the scale to the first item
-              CustomBookImage(
-                imgURL: state.books[index].volumeInfo.imageLinks?.thumbnail ??'',
+              InkWell(
+                onTap: () {
+                  GoRouter.of(context).push(AppRouter.kBookDetails, extra: state.books[index]);
+                },
+                child: CustomBookImage(
+                  imgURL: state.books[index].volumeInfo.imageLinks?.thumbnail ??'',
+                ),
               );
         },
       );

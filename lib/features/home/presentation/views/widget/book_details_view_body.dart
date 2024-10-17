@@ -11,7 +11,8 @@ import 'custom_book_details_app_bar.dart';
 
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key,});
+  final BookModels bookModels;
+  const BookDetailsViewBody({super.key, required this.bookModels,});
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -26,11 +27,14 @@ class BookDetailsViewBody extends StatelessWidget {
                 children: [
                   const CustomBookDetailsAppBar(),
                   BookDetailsSection(
+                    bookModels: bookModels,
                   ),
                   const SizedBox(
                     height: 37,
                   ),
-                  const BookAction(),
+                   BookAction(
+                    bookModels: bookModels,
+                  ),
                   Flexible(
                     fit: FlexFit.loose,
                     child: const SizedBox(

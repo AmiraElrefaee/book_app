@@ -9,6 +9,7 @@ final String errorMessage;
   Widget build(BuildContext context) {
     return Center(child: Text(errorMessage, style: Styles.textStyle16,
     textAlign:  TextAlign.center,
+
     ));
   }
 }
