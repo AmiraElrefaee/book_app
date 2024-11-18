@@ -20,32 +20,31 @@ class SearchedItemCubit extends Cubit<SearchedItemState> {
       emit(SearchedItemSuccess(books)); // Show all books by default
     });
   }
-  Future<void> FetchSeared({required String title})async{
+
+  Future<void> FetchSeared({required String title}) async {
     emit(SearchedItemLoading());
-    var result =await repo.fetchNewestBooks();
-    result.fold((failure){
+    var result = await repo.fetchNewestBooks();
+    result.fold((failure) {
       emit(SearchedItemFailure(failure.errMessage));
-    }, (books){
-
-      List<BookModels> filteredBooks=[] ;
+    }, (books) {
+      List<BookModels> filteredBooks = [];
       emit(SearchedItemSuccess(filteredBooks));
-      if (title.isEmpty || title==null){
-        filteredBooks=books;
+      if (title.isEmpty || title == null) {
+        filteredBooks = books;
         emit(SearchedItemSuccess(filteredBooks));
-      } else{
+      } else {
         filteredBooks = books
-            .where((book) =>
-            book.volumeInfo.title!.toLowerCase().contains(title.toLowerCase())).toList();
+            .where((book) => book.volumeInfo.title!
+                .toLowerCase()
+                .contains(title.toLowerCase()))
+            .toList();
       }
-      if (filteredBooks==null ||filteredBooks.isEmpty){
+      if (filteredBooks == null || filteredBooks.isEmpty) {
         emit(SearchedItemFailure('the books not found'));
-      }
-      else {
+      } else {
         emit(SearchedItemSuccess(filteredBooks));
       }
-
     });
-
   }
 }
 // List<Player> results;

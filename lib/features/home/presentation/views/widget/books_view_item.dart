@@ -1,5 +1,6 @@
 import 'package:book_application/core/utils/app_router.dart';
 import 'package:book_application/core/utils/asset_data.dart';
+import 'package:book_application/features/home/domain/entities/book_entity.dart';
 import 'package:book_application/features/home/presentation/views/data/book_models/book_models.dart';
 import 'package:book_application/features/home/presentation/views/widget/custom_book_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,17 +12,18 @@ import 'book_rating.dart';
 
 class BooksViewItem extends StatelessWidget {
   const BooksViewItem({super.key, required this.bookModels});
-  final BookModels bookModels;
+  final BookEntity bookModels;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetails, extra: bookModels),
+      onTap: () =>
+          GoRouter.of(context).push(AppRouter.kBookDetails, extra: bookModels),
       child: SizedBox(
         height: 175,
         child: Row(
           children: [
             CustomBookImage(
-                imgURL: bookModels.volumeInfo.imageLinks?.thumbnail ??''),
+                imgURL: bookModels.img ?? ''),
             const SizedBox(
               width: 30,
             ),
@@ -32,7 +34,7 @@ class BooksViewItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      bookModels.volumeInfo.title!,
+                      bookModels.title!,
                       style: Styles.textStyle20.copyWith(fontFamily: 'GT'),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -41,7 +43,7 @@ class BooksViewItem extends StatelessWidget {
                       height: 3,
                     ),
                     Text(
-                      bookModels.volumeInfo.authors![0],
+                      bookModels.outhName!,
                       style: Styles.textStyle14,
                     ),
                     const SizedBox(
@@ -56,8 +58,8 @@ class BooksViewItem extends StatelessWidget {
                         ),
                         const Spacer(),
                         BookRating(
-                          rating: 1,
-                          count: bookModels.volumeInfo.pageCount ?? 0,
+                          rating:  bookModels.rating ?? 0,
+                          count: bookModels.rating ?? 0,
                         ),
                       ],
                     ),

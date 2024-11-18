@@ -1,11 +1,10 @@
 import 'package:book_application/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 
-
 import 'best_seller_list_view_item.dart';
 import 'custom_appBar.dart';
 import 'feature_books_list_view.dart';
-
+import 'feature_list_view_body_blic_builder.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -47,3 +46,4 @@ class HomeViewBody extends StatelessWidget {
     );
   }
 }
+

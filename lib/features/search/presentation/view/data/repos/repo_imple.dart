@@ -5,7 +5,7 @@ import 'package:book_application/features/search/presentation/view/data/repos/ho
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class RepoImple extends homeRepo{
+class RepoImple extends homeRepo {
   final ApiService apiService;
   RepoImple(this.apiService);
   @override
@@ -13,7 +13,7 @@ class RepoImple extends homeRepo{
     try {
       var data = await apiService.get(
           endPoint:
-          'volumes?q=computer science&Filtering=free-ebooks&Sorting=newest');
+              'volumes?q=computer science&Filtering=free-ebooks&Sorting=newest');
       List<BookModels> books = [];
       for (var item in data['items']) {
         try {
@@ -30,5 +30,4 @@ class RepoImple extends homeRepo{
       return Left(ServerFailures('repo home imple ${e.toString()}'));
     }
   }
-  
 }

@@ -3,20 +3,21 @@ part of 'newest_books_cubit.dart';
 @immutable
 sealed class NewestBooksState extends Equatable {
   const NewestBooksState();
-  List<Object> get props =>[];
+  List<Object> get props => [];
 }
 
 final class NewestBooksInitial extends NewestBooksState {}
+
 final class NewestBooksLoading extends NewestBooksState {}
+
 final class NewestBooksFailure extends NewestBooksState {
   final String messError;
 
   const NewestBooksFailure(this.messError);
-
 }
+
 final class NewestBooksSuccess extends NewestBooksState {
-  final List<BookModels> bookModels;
+  final List<BookEntity> bookModels;
 
- const  NewestBooksSuccess(this.bookModels);
-
+  const NewestBooksSuccess(this.bookModels);
 }

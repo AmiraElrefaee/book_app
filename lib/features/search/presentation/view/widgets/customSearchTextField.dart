@@ -10,9 +10,9 @@ class Customsearchtextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SearchedItemCubit _cubit=context.read<SearchedItemCubit>();
+    SearchedItemCubit _cubit = context.read<SearchedItemCubit>();
     return TextFormField(
-      onChanged:(String value)=>_cubit.FetchSeared(title: value),
+        onChanged: (String value) => _cubit.FetchSeared(title: value),
         style: const TextStyle(
           fontSize: 20,
         ),

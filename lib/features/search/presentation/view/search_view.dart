@@ -17,22 +17,21 @@ class SearchView extends StatefulWidget {
 class _SearchViewState extends State<SearchView> {
   @override
   void initState() {
-
-
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (context) => SearchedItemCubit(getIt.get<HomeRepoImple>()),
         // Provide your repo here
-        child: Builder(
-            builder: (context) {
-              // Call fetchNewestBooks after the BlocProvider is attached to the context
-              BlocProvider.of<SearchedItemCubit>(context).fetchNewestBooks();
+        child: Builder(builder: (context) {
+          // Call fetchNewestBooks after the BlocProvider is attached to the context
+          BlocProvider.of<SearchedItemCubit>(context).fetchNewestBooks();
 
-              return const Scaffold(
-                body: SafeArea(child: SearchViewBody()),
-              );
-            }));
-  }}
+          return const Scaffold(
+            body: SafeArea(child: SearchViewBody()),
+          );
+        }));
+  }
+}
